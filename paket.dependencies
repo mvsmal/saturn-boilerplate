@@ -1,0 +1,20 @@
+source https://api.nuget.org/v3/index.json
+
+storage: none
+nuget FSharp.Core
+nuget Saturn
+nuget Simple.Migrations
+nuget Microsoft.Data.Sqlite
+nuget Dapper
+
+clitool dotnet-saturn
+
+// [ FAKE GROUP ]
+group Build
+  source https://api.nuget.org/v3/index.json
+  storage: none
+  framework: netstandard2.0
+
+  nuget Fake.DotNet.Cli
+  nuget Fake.IO.FileSystem
+  nuget Fake.Core.Target
